@@ -130,6 +130,15 @@ public enum Version {
         return software.isSpigot();
     }
 
+    public static boolean isFolia() {
+        try {
+            Class.forName("io.papermc.paper.threadedregions.RegionizedServer");
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
+
     public static boolean hasComponent(@NotNull VersionComponent component) {
         return LOADED_COMPONENTS.contains(component);
     }

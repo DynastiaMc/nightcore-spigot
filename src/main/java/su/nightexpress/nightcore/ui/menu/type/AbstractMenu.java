@@ -152,7 +152,7 @@ public abstract class AbstractMenu<P extends NightPlugin> implements Menu {
                 linked.getCache().addAnchor(player);
             }
 
-            if (Version.isAtLeast(Version.MC_1_21_4)) {
+            if (Version.isAtLeast(Version.MC_1_21_4) && !Version.isFolia()) {
                 var builder = this.menuType.typed().builder();
                 // Stupid hack to bypass 9X3 (and probably other container-based) menu types to be bound to real container(s) at player's location.
                 if (builder instanceof LocationInventoryViewBuilder<?> locationBuilder) {
